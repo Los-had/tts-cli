@@ -3,16 +3,13 @@ import sys
 
 args = sys.argv[1::]
 content = sys.argv[2]
-#save = sys.argv[3]
-#filename = sys.argv[4]
-
-if args[0] == '-t':
-    speak(content)
-#elif args[1] == '':
-#    speak(content)
-#elif args[2] == '':
-#    pass
-#elif args[3] == '':
-#    pass
+filename = sys.argv[4]
+if len(args) < 2:
+  print("Insuficient number of arguments")
 else:
-    pass
+  if args[0] == '-t':
+    speak(content)
+  elif args[2] == '-s':
+    save_file(content, filename)
+  else:
+    print("Error! invalid or insuficient arguments.")
